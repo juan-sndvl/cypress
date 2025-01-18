@@ -17,4 +17,19 @@ pipeline {
             }
         }
     }
+
+    post {
+        always {
+            // Archive Cypress screenshots and videos for debbuging
+            archiveArtifacts artifacts: '**/cypress/screenshots/**', allowEmptyArchive: true
+            archiveArtifacts artifacts: '**/cypress/videos/**', allowEmptyArchive: true
+
+            // Optional: Archive test reports
+            archiveArtifacts artifacts: 'cypress/reports/*.html', allowEmptyArchive: true
+        }
+
+        failure {
+            echo 'Test failed. Check the archived artifacts for details.'
+        }
+    }
 }
