@@ -9,8 +9,8 @@ module.exports = defineConfig({
   video: true,
   screenshotOnRunFailure: true,
   screenshotsFolder: 'cypress/screenshots',
-  videosFolder: ' cypress/videos',
-  reporter: 'mochawesome',
+  videosFolder: 'cypress/videos',
+    reporter: 'mochawesome',
   reporterOptions: {
     reportDir: 'cypress/reports',
     overwrite: false,
