@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+        stage('Clean Workspace') {
+            steps {
+                sh 'rm -rf *'
+            }
+        }
         stage('Checkout') {
             steps {
                 git credentialsId: 'git-credentials', url: 'https://github.com/juan-sndvl/cypress'
