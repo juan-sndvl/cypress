@@ -16,6 +16,11 @@ pipeline {
                 sh 'echo Testing...'
             }
         }
+        stage('Debug Workspace') {
+            steps {
+                sh 'ls -R'
+            }
+        }
     }
 
     post {
