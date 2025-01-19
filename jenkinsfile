@@ -11,9 +11,9 @@ pipeline {
                 sh 'echo Building...'
             }
         }
-        stage('Test') {
+        stage('Run Cypress Tests') {
             steps {
-                sh 'echo Testing...'
+                sh 'npx cypress run'
             }
         }
         stage('Debug Workspace') {
