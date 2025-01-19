@@ -11,6 +11,12 @@ pipeline {
                 sh 'echo Building...'
             }
         }
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install'
+                sh 'npx cypress install' // Ensure the binary is installed
+            }
+        }
         stage('Run Cypress Tests') {
             steps {
                 sh 'npx cypress run'
